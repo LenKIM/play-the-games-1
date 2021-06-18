@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>하이로우 게임시작 화면</title>
+</head>
+<body>
+
+<p th:text="${result}">"Wait"</p>
+<br>
+<p th:text="${name}">"Wait"</p>
+<br>
+<p th:text="${contextId}">"Wait"</p>
+
+<form action="/guess" method="post">
+    <label>예상 숫자 입력하기</label>
+    <label>
+        <input type="text" name="number">
+    </label>
+    <input type="hidden" name="contextId" th:value="${contextId}">
+
+    <input type="submit">
+</form>
+
+</body>
+</html>

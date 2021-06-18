@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class HighLowApplicationService {
 
-    @Getter(value = AccessLevel.PACKAGE)
+    @Getter(value = AccessLevel.PUBLIC)
     final HighLowPlayService highLowPlayService;
 
     public HighLowApplicationService(HighLowPlayingContextRepository contextRepository) {
@@ -24,9 +24,8 @@ public class HighLowApplicationService {
     }
 
     @Transactional
-    public void start() {
-        StartHighLowPlay command = new StartHighLowPlay("Foo");
-        getHighLowPlayService().start(command);
+    public Long start(StartHighLowPlay command) {
+        return getHighLowPlayService().start(command);
     }
 
     @Transactional

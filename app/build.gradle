@@ -37,9 +37,12 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
     runtimeOnly 'org.hsqldb:hsqldb'
 
-    implementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
+    implementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-devtools'
 }
+
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
